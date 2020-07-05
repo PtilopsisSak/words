@@ -1,3 +1,4 @@
+document.write('<div id="fireworklayer" style="left: -391px; top: 3px; height: auto; width: auto; position: absolute; z-index: -3"><canvas id="fireworkcanvas" width="400" height="400" ></canvas></div>')
 var x=150;
 var maxlen=x;
 var n = 30;
@@ -13,9 +14,9 @@ var curtimes=0,curtimes1=0;
 var curangle=[],curangle1=[];
 var curlen=[],curlen1=[];
 var dx=0,sx= 0,dxx= 0,dx1,sx1;
-myCanvas.width  = 2*x;
-myCanvas.height = 2*x;
-var c=document.getElementById("myCanvas");
+fireworkcanvas.width  = 2*x;
+fireworkcanvas.height = 2*x;
+var c=document.getElementById("fireworkcanvas");
 var cxt=c.getContext("2d");
 cxt.lineWidth=4;
 cxt.lineJoin="round";
@@ -54,8 +55,8 @@ function draw() {
 function cxtclear(){cxt.clearRect(0,0,2*x,2*x)}
 document.addEventListener('click', function (e) {
     ai =false
-    Layer1.style.left= e.pageX-x;
-    Layer1.style.top=e.pageY-x;
+    fireworklayer.style.left= e.pageX-x;
+    fireworklayer.style.top=e.pageY-x;
     cxt.strokeStyle=color[Math.floor(Math.random()*22)];
     draw();
 });
