@@ -1,4 +1,4 @@
-document.write('<div id="fireworklayer" style="left: -391px; top: 3px; height: auto; width: auto; position: absolute; z-index: -3"><canvas id="fireworkcanvas" width="400" height="400" ></canvas></div>')
+document.write('<div id="fireworklayer" style="left: -391px; top: 3px; height: auto; width: auto; position: absolute; z-index: 0"><canvas id="fireworkcanvas" width="400" height="400" ></canvas></div>')
 var x=150;
 var maxlen=x;
 var n = 30;
