@@ -5,28 +5,148 @@
 </head>
 <style>
     h1 {
-        margin-block-start: 0.1em;
-        margin-block-end: 0.1em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
+        margin-top: 0.1em;
+        margin-bottom: 0.1em;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    h2{
+        margin-left: 10px;
+    }
+    h3{
+        margin-left: 20px;
+    }
+    p{
+        margin-left: 30px;
+    }
+    .box{
+        margin-bottom: 6px;
+        float: left;
+        width: 800px;
+        height: auto;
+        box-shadow: -3px 3px 3px 1px rgba(0,0,0,.3),1px -1px 1px 1px rgba(0,0,0,.3);
     }
     .main {
-        left: 20px;
+        left: 100px;
         top: 20px;
+        width: 810px;
         position: absolute;
         z-index: 2;
     }
     html, body {
         color: #e8e6e3 ;
-        background-color : #181a1b;
+        background-color : #534b54;
     }
+    #time{
+        top: 40px;
+        left: 40px;
+        height: 100px;
+        width: 100px;
+    }
+    p#a{opacity: 0.3;
+        transform: rotate(-5deg);
+        transition: opacity 0.5s;
+    }
+    p#a:hover{
+        opacity: 1;
+    }
+    a{transition: color 0.5s;text-decoration:none;}
+    a:link {color:#FF0000;}		/* 未被访问的链接 */
+    a:visited {color:#ff0000;text-decoration:none;}	/* 已被访问的链接 */
+    a:hover {color:#ffcc00;}	/* 鼠标指针移动到链接上 */
+    a:active {color:#0000FF;}	/* 正在被点击的链接 */
 </style>
 <body>
+<div id="time" style="position:absolute;">
+    <div id="display" style="left:7px;top:7px;font-size :50px;position: absolute;">
+        <p id="a" style="margin-top: 0;margin-bottom: 0;"></p>
+    </div>
+</div>
+
 <div class="main">
     <h1>Hello.</h1>
-    <hr>
-
-</div>
+    <div style="width: 1200px;"><hr></div>
+    <div class="box">
+        <p>这个网页应该会持续更新，写一写我的东西</p>
+        <p>最近更改：2020-08-10</p>
+    </div>
+    <div class="box">
+        <h2>关于电脑上的倒计时</h2>
+        <h3>开机启动的问题</h3>
+        <p>这个我设置的是开机自动启动，如果不需要，请按照以下方法关闭：</p>
+        <p>关闭:进入系统启动目录 C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\ 目录,将 倒计时.exe或CountDown.exe 这个快捷方式删除即可.</p>
+        <p>开启:进入 D:\0-vb倒计时\ 这个目录,复制CountDown.exe,再进入 C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\ 右键,选择粘贴快捷方式,别选错了是粘贴快捷方式，否则无法准确运行.</p>
+        <p>另外,系统启动目录我创建过一个快捷方式,在 D:\bat\ 目录下的名为 启动 的文件</p>
+        <h关于</h3>
+        <p>这个倒计时程序是我自己写的,这个电脑在我之前有一个别人下的倒计时,在桌面的"重要文件勿动"这个文件夹里,我感觉不好然后我自己写了一个</p>
+        <p>这个项目已开源,源代码在<a href="https://github.com/PtilopsisSak/countdown-for-windows" target="_blank">这里</a></p>
+        <p>有时会有更改，会发布在我的GitHub上</p>
+        <h3>使用</h3>
+        <p>使用说明在<a href="https://github.com/PtilopsisSak/countdown-for-windows" target="_blank">这里</a>，往下翻<br>配置文件在D:\0-vb倒计时\setting.txt里，格式应该能看懂吧</p>
+    </div>
+    <div class="box">
+        <h2>桌面上的一些东西</h2>
+        <p>新建文件夹 里是投影软件，不能删！！！鬼知道上一届为什么要放在这里</p>
+        <p>lnk 里是一些不常用的快捷方式（不知道还在不在）</p>
+        <p>hcn 文件夹可以删掉吗，秋梨膏，我可能忘了删除了</p>
+        <p>重要文件勿动 里是我之前的人用的倒计时程序，删不删随意</p>
+    </div>
+    <div class="box">
+        <h2>新闻30分</h2>
+        <p>一些东西在这里面-->D:\bat\添加计划任务-新闻30分.txt</p>
+        <p>内容在上面的文件里，可以自己改 其中/tn 后面的是任务名称（好像是news30，时间太久忘了），建议不改</p>
+        <p>/st 后面为启动时间，24h制</p>
+        <p>添加任务：</p>
+        <p>打开CMD 1.（win+r）组合键 2.输入cmd 3.运行</p>
+        <p>输入上面的内容（类似于 <code>schtasks /create /sc daily /st 17:50 /tn news30 /tr D:\bat\news30.bat</code> 再回车</p>
+        <h3>注意，Cmd里粘贴不能用Ctrl+v，老老实实用正常方法</h3>
+        <p>如果提示是否覆盖，输入y再按回车</p>
+        <p>删除任务：</p>
+        <p>打开cmd</p>
+        <p>输入<code>schtasks /end /tn "news30"</code>,回车确认</p>
+        <p>另外的一些东西在D:\bat\news30.bat里，右键，编辑即可，懂一点cmd的应该会修改</p>
+    </div>
+    <div class="box">
+        <h2>最后</h2>
+    <p>感谢你看完，祝你生活愉快</p>
+    </div></div>
 <script src="js\firework.js"></script>
+<script>
+    /**
+ * Created by ASUS on 2020/7/14.
+ * 图层跟随鼠标移动但局限于父标签内
+ */
+var xti;
+var yti;
+var wti = window.innerWidth;
+var hti = window.innerHeight;
+function move_layer() {
+    xti = (event.clientX + document.body.scrollLeft) / wti * 100;
+    yti = (event.clientY + document.body.scrollTop) / hti * 100;
+    display.style.left = xti + "%";
+    display.style.top = yti + "%";
+}
+document.onmousemove = move_layer;
+/**
+ 显示时间
+ **/
+var d;
+var s;
+var hor,min;
+function show() {
+    d=new Date();
+    hor=d.getHours();
+    min=d.getMinutes();
+    s="";
+    if (hor<10){s="0"}
+    s+=hor;
+    s+=":";
+    if (min<10){s+="0"}
+    s+= min;
+    a.innerHTML=s;
+}
+setInterval("show()",2000);
+</script>
 </body>
+
 </html>

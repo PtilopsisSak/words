@@ -42,11 +42,7 @@ function draw() {
     }
     if (curtimes==times) {
         curtimes=0;
-        if (ai) {
-            setTimeout("rnd()",timeout);
-        }else{
-            setTimeout("cxtclear()",timeout);
-        }
+        setTimeout("cxtclear()",timeout);
     } else{
         curtimes++;
         setTimeout("draw()",timeout);
@@ -54,7 +50,6 @@ function draw() {
 }
 function cxtclear(){cxt.clearRect(0,0,2*x,2*x)}
 document.addEventListener('click', function (e) {
-    ai =false
     fireworklayer.style.left= e.pageX-x;
     fireworklayer.style.top=e.pageY-x;
     cxt.strokeStyle=color[Math.floor(Math.random()*22)];
